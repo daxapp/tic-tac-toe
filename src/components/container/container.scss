@@ -115,12 +115,9 @@
     .center {
         padding-top: 20px;
         height: 90vh;
-        position: relative;
     }
     
     .container {
-        position: absolute;
-        display: grid;
         grid-template-columns: repeat(3, 110px);
         grid-template-rows: repeat(3, 110px);
         gap: 10px;
@@ -149,6 +146,9 @@
             margin: 0 auto;
             align-items: center;
             margin-top: 10px;
+        }
+        &-dark {
+            color: #fff;
         }
     }
     
