@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.142e771b.css",
-    "main.js": "/static/js/main.35a05baa.js",
-    "static/media/rule3.png": "/static/media/rule3.6cf36aeaf3c9a08391e2.png",
-    "static/media/Frame 2 (4).png": "/static/media/Frame 2 (4).0a9e215e670a547e4fb8.png",
-    "static/media/rule2.png": "/static/media/rule2.29d3e4479127036339a8.png",
-    "static/media/rule1.png": "/static/media/rule1.c4999b84dd79595b63c8.png",
-    "index.html": "/index.html",
-    "main.142e771b.css.map": "/static/css/main.142e771b.css.map",
-    "main.35a05baa.js.map": "/static/js/main.35a05baa.js.map"
+    "main.css": "/tic-tac-toe/static/css/main.b3134819.css",
+    "main.js": "/tic-tac-toe/static/js/main.41666880.js",
+    "static/media/rule3.png": "/tic-tac-toe/static/media/rule3.6cf36aeaf3c9a08391e2.png",
+    "static/media/Frame 2 (4).png": "/tic-tac-toe/static/media/Frame 2 (4).0a9e215e670a547e4fb8.png",
+    "static/media/rule2.png": "/tic-tac-toe/static/media/rule2.29d3e4479127036339a8.png",
+    "static/media/rule1.png": "/tic-tac-toe/static/media/rule1.c4999b84dd79595b63c8.png",
+    "index.html": "/tic-tac-toe/index.html",
+    "main.b3134819.css.map": "/tic-tac-toe/static/css/main.b3134819.css.map",
+    "main.41666880.js.map": "/tic-tac-toe/static/js/main.41666880.js.map"
   },
   "entrypoints": [
-    "static/css/main.142e771b.css",
-    "static/js/main.35a05baa.js"
+    "static/css/main.b3134819.css",
+    "static/js/main.41666880.js"
   ]
 }
