@@ -1,0 +1,214 @@
+.main {
+    @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    height: 100vh;
+    padding-top: 30px;
+    background: url('../../assets/img/Frame\ 2\ \(4\).png') center center/cover no-repeat;
+    position: relative;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-style: italic;
+    object-fit: cover;
+    &__title {
+        font-size: 100px;
+        font-family: "Barlow Semi Condensed", sans-serif;
+        font-style: italic;
+        font-weight: 600;
+        color: black;
+        text-align: center;
+        user-select: none;
+        letter-spacing: 10px;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1),  
+        -5px -5px 10px rgba(0, 0, 0, 0.2), 
+        5px -5px 10px rgba(0, 0, 0, 0.2),  
+        -5px 5px 10px rgba(0, 0, 0, 0.2);
+        &-inline {
+            display: inline-block;
+        }
+    }
+    &__btn {
+        margin: 0 auto;
+        width: 320px;
+        height: 60px;
+        border: 1px solid black;
+        font-family: "Barlow Semi Condensed", sans-serif;
+        font-style: italic;
+        font-weight: 600;
+        text-align: center;
+        font-size: 50px;
+        color: black;
+        margin-top: 40px;
+        box-shadow: 4px 4px 4px 4px black;
+        user-select: none;
+        transition: all 0.2s;
+        cursor: pointer;
+        text-decoration: none;
+        &:hover {
+            background-color: rgba(0,0,0,0.1);
+        }
+        &:active {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+    }
+    &__buttons {
+        height: 320px;
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__link {
+        text-decoration: none;
+        color: black;
+        font-family: "Barlow Semi Condensed", sans-serif;
+        font-style: italic;
+        font-weight: 600;
+        font-size: 50px;
+    }
+    &__setings {
+        padding: 0px 50px;
+    }
+}
+
+.servers {
+    padding-top: 20px;
+    width: 1000px;
+    margin: 0 auto;
+    &__item {
+        display: flex;
+        width: 500px;
+        height: 50px;
+        border: 1px solid black;
+        margin: 30px;
+    }
+    &__title {
+        color: black;
+        font-size: 30px;
+    }
+    &__delete {
+        color: black;
+    }
+}
+
+.modal {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    box-shadow: 2px 40px 10px rgba(0, 0, 0, 0.2);
+    background-color: rgb(255, 255, 255);
+    top: calc(50% - 150px);
+    left: calc(50% - 150px);
+    z-index: 100000;
+    border-radius: 3px;
+    &__title {
+        padding-top: 20px;
+        text-align: center;
+        font-size: 25px;
+        color: black;
+    }
+    &__input {
+        display: block;
+        width: 200px;
+        height: 40px;
+        margin: 0px auto;
+        margin-top: 30px;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        border-radius: 3px;
+        padding: 0px 30px ;
+        font-size: 30px;
+    }
+    &__close {
+        width: 30px;
+        height: 30px;
+        cursor: pointer; 
+        position: absolute; 
+        top: 17px; 
+        left: 268px;
+        &:before, &:after {
+            content: ""; 
+            position: absolute; 
+            width: 24px; 
+            height: 4px; 
+            background: rgb(0, 0, 0);
+        }
+        &:before {
+            transform: rotate(45deg);
+        }
+        &:after {
+            transform: rotate(-45deg);
+        }
+    }
+    &__enter {
+        width: 100px;
+        display: block;
+        height: 30px;
+        border: none;
+        margin: 0 auto;
+        font-size: 25px;
+        margin-top: 10px;
+        background-color: rgb(48, 178, 0);
+        border-radius: 3px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        color: white;
+        cursor: pointer;
+        &-active {
+            background-color: green;
+        }
+    }
+    &__link {
+        text-decoration: none;
+        color: black;
+    }
+    
+}
+
+.underlayer {
+    height: 100%;
+    width: 100%;
+    background-color: #00000056;
+    position: absolute;    
+    z-index: 100;
+    top: 0;
+    left: 0;
+}
+
+input[type="number"]::-webkit-outer-spin-button, 
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.black {
+    color: red;
+    font-size: 15px;
+    padding: 0 20px;
+
+}
+
+@media (max-width: 576px) { 
+    .main {
+        &__title {
+            font-size: 30px;
+        }
+        &__btn {
+            width: 160px;
+            height: 30px;
+            font-size: 25px;
+            margin-top: 20px;
+
+        }
+        &__buttons {
+            height: 160px;
+            margin-top: 25px;
+        }
+        &__link {
+            font-size: 25px;
+        }
+        &__setings {
+            padding: 0px 25px;
+        }
+    }
+ }
+
+// Устройства Medium (планшеты, 768 пикселей и выше)

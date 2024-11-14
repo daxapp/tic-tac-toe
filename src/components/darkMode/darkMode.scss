@@ -1,0 +1,48 @@
+body {
+    background-color: #fff;
+    transition: background-color .5s, color .5s;
+
+}
+    body.night-mode {
+      background-color: #222;
+      color: hsl(0, 0%, 100%);
+      .tumbler-wrapper {
+        background-color: #fff;
+    } 
+    }
+    body.night-mode .tumbler {
+        background-color: #000000;
+        transform: translateX(calc(100% + 0px));
+    }
+
+  .tumbler-wrapper {
+    margin-left: auto;
+    min-width: 80px;
+    height: 51px;
+    background-color: black;
+    border: #1d92b2;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 6px;
+    cursor: pointer;
+    display: flex;
+    position: relative; }
+    .tumbler-wrapper svg {
+      width: 25px;
+      height: 25px; }
+  
+  .tumbler {
+    position: absolute;
+    min-height: 34px;
+    min-width: 34px;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: transform .5s, background-color .5s;
+    will-change: transform; 
+    }
+  
+  .sun-svg,
+  .moon-svg {
+    display: none; }

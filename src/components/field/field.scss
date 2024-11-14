@@ -1,0 +1,119 @@
+.field {
+    height: 250px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    position: relative;
+    
+    .line {
+        display: inline-block;
+        // width: 10px;
+        // height: 250px;
+        // background-color: #05386b;
+        position: absolute;
+        // border-radius: 5px;
+        // box-shadow:
+        // inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+        // 0 0 0 2px rgba(0, 0, 0, 0.5),
+        // 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+        width: 3px;
+        height: 200px; 
+        background-color: black; 
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        transition: 0.3s all;
+        filter: blur(7px);
+    }
+    
+    .horizontal {
+        width: 200px;
+        height: 3px;
+    }
+
+    .title {
+        position: absolute;
+        top: 0;
+    }
+
+    .first {
+        left: 63%;
+    }
+
+    .second {
+        left: 36%;
+    }
+
+    .third {
+        top: 36%;
+    }
+
+    .fourth {
+        top: 63%
+    }
+    
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 60px);
+        grid-template-rows: repeat(3, 60px);
+        gap: 10px;
+        align-items:center;
+    }
+
+
+}
+
+.clear {
+    position: absolute;
+    top: 700px;
+    left: 1700px;
+    width: 100px;
+    height: 50px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    background-color: #3b80ff;
+}
+
+.field-active {
+    .line {
+        filter: blur(0px);
+    }
+}
+
+.dark {
+    .line {
+        background-color: #fff;
+    }
+}
+
+.field__wino {
+    
+    width: 200px;
+    height: 200px;
+    color: rgba($color: #000000, $alpha: 0.5);
+    position: absolute;
+    font-size: 250px;
+    font-weight: 300;
+    top: -59px;
+    left: 56px;
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    z-index: -1;
+}
+.field__winx {
+    
+    width: 200px;
+    height: 200px;
+    color: rgba($color: #000000, $alpha: 0.5);
+    position: absolute;
+    font-size: 250px;
+    font-weight: 300;
+    top: -59px;
+    left: 63px;
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    z-index: -1;
+}

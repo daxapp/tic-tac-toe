@@ -1,0 +1,55 @@
+.nav {
+    display: flex;
+    min-height: 51px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px;
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        gap: 62px;
+        width: 120px;
+
+    }
+    &__img {
+        display: block;
+        height: 51px;
+        width: 51px;
+        position: relative;
+        user-select: none;
+        img {
+            width: 51px;
+            height: 51px;
+        }
+        &::before {
+            display: block;
+            position: absolute;
+            content: '';
+            width: 70px;
+            height: 70px;
+            top: -7px;
+            left: -4px;
+            border-radius: 50%;
+            background-color: transparent;
+            transition: 0.5s all;
+        }
+        &:nth-child(2) {
+            &::before {
+                top: -9px;
+                left: -8px; 
+            }
+        }
+        &:hover {
+            &::before {
+                background-color: #9c9c9c3a;
+            }
+        }
+        .link {
+            position: absolute;
+            padding: 27px;
+            left: 0;
+            color: transparent;
+            z-index: 1000;
+        }
+    }
+}
