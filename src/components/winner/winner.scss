@@ -50,3 +50,26 @@
     font-size: 100px;
     text-align: center;
 }
+
+@media (max-width: 576px) {
+    .modal-win {
+        position: absolute;
+        width: 300px;
+        height: 250px;
+        background-color: #ffffff;
+        border-radius: 5px;
+        box-shadow: 2px 40px 10px rgba(0, 0, 0, 0.2);
+        top: calc(50% - 150px);
+        left: calc(50% - 150px);
+        z-index: 10000;
+    }
+    .info-winner {
+        font-size: 80px;
+        text-align: center;
+    }
+
+    .clear-container {
+        width: 230px;
+        height: 60px;
+    }
+}

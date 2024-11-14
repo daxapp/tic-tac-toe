@@ -6,7 +6,7 @@
     position: relative;
     font-family: "Barlow Semi Condensed", sans-serif;
     font-style: italic;
-    object-fit: cover;
+    background-size: 100% 100%;
     &__title {
         font-size: 100px;
         font-family: "Barlow Semi Condensed", sans-serif;
@@ -189,26 +189,29 @@ input[type="number"] {
 @media (max-width: 576px) { 
     .main {
         &__title {
-            font-size: 30px;
+            margin-top: 100px;
+            font-size: 40px;
+            letter-spacing: 5px;
+            line-height: 70px;
         }
         &__btn {
-            width: 160px;
-            height: 30px;
-            font-size: 25px;
-            margin-top: 20px;
+            width: 200px;
+            height: 40px;
+            font-size: 30px;
+            margin-top: 40px;
 
         }
         &__buttons {
             height: 160px;
-            margin-top: 25px;
+            margin-top: 70px;
         }
         &__link {
-            font-size: 25px;
+            font-size: 30px;
         }
         &__setings {
             padding: 0px 25px;
         }
     }
- }
+}
 
 // Устройства Medium (планшеты, 768 пикселей и выше)

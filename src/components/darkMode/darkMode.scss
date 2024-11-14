@@ -46,3 +46,38 @@ body {
   .sun-svg,
   .moon-svg {
     display: none; }
+
+@media(max-width: 576px) {
+  .tumbler-wrapper {
+    margin-left: auto;
+    min-width: 60px;
+    height: 41px;
+    background-color: black;
+    border: #1d92b2;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 6px;
+    cursor: pointer;
+    display: flex;
+    position: relative; }
+    .tumbler-wrapper svg {
+      width: 20px;
+      height: 20px; }
+  
+  .tumbler {
+    position: absolute;
+    min-height: 25px;
+    min-width: 25px;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: transform .5s, background-color .5s;
+    will-change: transform; 
+    }
+  
+  .sun-svg,
+  .moon-svg {
+    display: none; }
+
+}

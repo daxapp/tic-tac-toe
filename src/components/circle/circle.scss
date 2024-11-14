@@ -6,6 +6,7 @@
     height: 55px;
     border-radius: 50%;
     background-color: black;
+    position: relative;
     .neon-circle {
         position: relative;
         width: 55px;
@@ -41,5 +42,72 @@
             box-shadow: none;
         }
     }
+}
+
+@media (max-width: 576px) { 
+    .circle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background-color: black;
+        position: relative;
+        .neon-circle {
+            position: relative;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            box-shadow: 
+                0 0 5px 1px rgba(65, 0, 249, 0.5),
+                0 0 12px 1px rgba(65, 0, 249, 0.3);  
+            &:before {
+                content: '';
+                position: absolute;
+                top: 5px;
+                left: 5px;
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                background-color: rgb(255, 255, 255); 
+                box-shadow: 
+                    inset 0 0 5px 1px  rgba(65, 0, 249, 0.6),
+                    inset 0 0 12px 1px rgba(65, 0, 249, 0.3);   
+            }
+        }
+        .dark {
+            background-color: rgb(255, 255, 255);
+            &::before {
+                content: '';
+                background-color: #222;
+            }
+        }
+        .without-neon {
+            box-shadow: none;
+            &::before {
+                box-shadow: none;
+            }
+        }
+    }
+
+    .bigger-o {
+        top: 3px;
+        width: 33px;
+        height: 33px;
+        .neon-circle {
+            width: 33px;
+            height: 33px;
+            &:before {
+                top: 5px;
+                left: 5px;
+                width: 23px;
+                height: 23px;
+                border-radius: 50%; 
+            }
+        }
+    } 
+
+
 }
 

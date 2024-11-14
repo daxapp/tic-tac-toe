@@ -80,11 +80,11 @@ const ViewMain = () => {
             {isModal ? <ModalEnter onModal={onModal}/> : null}
             <div className='main__title'>
                 E
-                <div className='main__title-inline'><Cross class1='bigger phone-size'/></div>
+                <div className='main__title-inline'><Cross bigger/></div>
                 treme 
                 <br/> 
                 Tic Tac T
-                <div className='main__title-inline'><Circle/></div>
+                <div className='main__title-inline'><Circle bigger/></div>
                 e
             </div>
             <div className='main__buttons'>
