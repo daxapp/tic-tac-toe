@@ -95,7 +95,7 @@ const ViewMain = () => {
                     Enter Game
                 </button>
                 <button className='main__setings main__btn'>
-                    <Link to="/rules" className='main__setings main__link'>Rules</Link>
+                    <Link to="rules" className='main__setings main__link'>Rules</Link>
                 </button> 
             </div>
         </>        

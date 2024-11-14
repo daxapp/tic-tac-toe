@@ -10,7 +10,7 @@ const Rules = () => {
     <>
         <div className="nav__img rules__exit">
             <img src={exitImg} alt='alt' />
-            <Link to={'/'} className='link'></Link>                    
+            <Link to={'/tic-tac-toe'} className='link'></Link>                    
         </div>
         <div className="rules">
             <h1 className="rules__title">RULES</h1>

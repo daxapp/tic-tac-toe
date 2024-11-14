@@ -14,20 +14,20 @@ import {
 
   const router = createBrowserRouter([
     {
-      path: "/:numGame",
+      path: "tic-tac-toe/:numGame",
       element: <ErrorBoundary fallback='введений неіснуючи код'><Container/></ErrorBoundary>,
     },
     {
-      path: "/",
+      path: "/tic-tac-toe",
       element: <MainScreen/>,
       errorElement: <ErrorPage/>
     },
     {
-      path: '/wrongCode',
+      path: 'tic-tac-toe/wrongCode',
       element: <WrongCode></WrongCode>
     },
     {
-      path: '/rules',
+      path: 'tic-tac-toe/rules',
       element: <Rules></Rules>
     }
 
