@@ -1,12 +1,9 @@
 import database from "../firebase";
 import { ref, onValue, set } from "firebase/database";
 import useAction from "./useAction";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 
 
 const useHttp = () => {
-    const navigate = useNavigate()
     const { setDataFromDB, setCliked } = useAction();
     const subscribeToDataFromDB = (path) => {
         setCliked(false)

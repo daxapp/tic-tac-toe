@@ -1,13 +1,7 @@
 import './nav.scss';
 import { useSelector } from 'react-redux';
-import infoImg from '../../assets/icons/info.png';
-import whiteInfoImg from '../../assets/icons/whiteInfo.png'
 import exitImg from '../../assets/icons/exit.png';
 import whiteExitImg from '../../assets/icons/whiteExit.png'
-import whitePeopleImg from '../../assets/icons/whitePeople.png';
-import peopleImg from '../../assets/icons/people.png';
-import shareImg from '../../assets/icons/share.png';
-import whiteShareImg from '../../assets/icons/whiteShare.png';
 import DarkMode from '../darkMode/darkMode';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';

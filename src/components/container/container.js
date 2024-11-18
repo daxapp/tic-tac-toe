@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import useWhoWinner from "../../hooks/useWhoWinner";
 import Field from "../field/field";
 import './container.scss';
@@ -11,70 +11,52 @@ import Circle from "../circle/circle";
 import Cross from "../cross/cross";
 import { useParams } from "react-router-dom";
 import Winner from "../winner/winner";
+import useCoder from "../../hooks/useCoder";
 
 
-const abcDecoder = {
-    'Q': 0,
-    'w': 1,
-    'e': 2,
-    'a': 3,
-    'g': 4,
-    'v': 5,
-    'i': 6,
-    'l': 7,
-    'z': 8,
-    'h': 9,
-};
-
-const decoder = (codedNumber) => {
-    return codedNumber.match(/\d{2,3}/g).map(item => {
-        return abcDecoder[String.fromCharCode(item)]
-    }).join('')
-}
 
 const Container = () => {
     const state = useSelector(state => state);
+    const {decoder} = useCoder()
     const { whoWinnerInContainer } = useWhoWinner();
     const { setCliked, setWinner } = useAction();
     const { subscribeToDataFromDB, setDataInDB } = useHttp();
-    const arrayRef = useRef([]);
     const { numGame } = useParams();
 
-    const { data, isNextX, prevStep, darkMode, winner, winPosition, playersNum } = state;
-
-    const createCode = (code) => {
-        let result = '';
-        code.split('').forEach(item => {
-            if (!isNaN(item)) {
-                result += item;
-            }   
-        })
-        result = result.slice(result.length-6) * 581 + ''
-        return result.slice(result.length-6);
-    }
+    const { data, isNextX, darkMode, winner, winPosition, } = state;
 
     useEffect(() => {
         subscribeToDataFromDB(`Server/games/${decoder(numGame)}`)
+        //eslint-disable-next-line
     }, []);
 
     useEffect(() => {
-        console.log(winner)
         if (state.clicked) {
             setDataInDB(`Server/games/${decoder(numGame)}`, state)
         }
-    }, [state])
+        // eslint-disable-next-line
+    }, [state, setDataInDB, numGame])
 
     useEffect(() => {   
         whoWinnerInContainer(winPosition);
         setCliked(false)
 
-    }, [data, whoWinnerInContainer, state]);
+    }, [data, whoWinnerInContainer, state, setCliked, winPosition]);
 
     useEffect(() => {
         return () => {
             setWinner(0);
         }
-    }, [winner]);
+    }, [winner, setWinner]);
+
+    const copyTextToClipboard = async (text) => {
+        try {
+          await navigator.clipboard.writeText(text);
+          console.log('Текст успешно скопирован в буфер обмена!');
+        } catch (err) {
+          console.error('Ошибка:', err);
+        }
+    };
 
     return (
         <>  
@@ -83,7 +65,7 @@ const Container = () => {
             <div className="center">
                 <div className="item">
                     <div className={darkMode ? 'who-next who-next-dark' : 'who-next'}>NEXT STEP</div>
-                    <div className={darkMode ? "code-room code-room_dark":"code-room"}>CODE ROOM: {decoder(numGame)}</div>
+                    <div title='copy code' className={darkMode ? "code-room code-room_dark" : "code-room"} onClick={() => copyTextToClipboard(decoder(numGame))}><span className="no">CODE ROOM:</span> <span >{decoder(numGame)}</span></div>
                     <div className="who-next-icons">
                         <Cross notNeon={!isNextX}/>
                         <Circle notNeon={isNextX}/>
@@ -99,9 +81,6 @@ const Container = () => {
                         return (
                             <div key={uniqeuId} >
                                 <Field 
-                                    ref={(el) => {
-                                        arrayRef.current[i] = el;
-                                    }} 
                                     dataProps={i}
                                     classProps={state.nextField.includes(i) ? 'field field-active' : 'field'}
                                 />

@@ -8,31 +8,17 @@ import useWhoWinner from "../../hooks/useWhoWinner";
 import Cross from '../cross/cross';
 import Circle from '../circle/circle';
 
-export const replaceArray = (array, i) => {
-    let result = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-    result = result.map((item, index) => {
-        if (!array[index] && i !== index) {
-            return item
-        }
-        return null
-    })
-    
-    if (result[0] === 0) {
-        return [0, ...result.filter(item => item)];
-    } else {
-        return result.filter(item => item);
-    }
-}   
 
-const Field = React.forwardRef(({onClick, dataProps, classProps }, ref) => {
-    const state = useSelector(state => state)   
+
+const Field = ({onClick, dataProps, classProps }) => {
+    const state = useSelector(state => state);
     const data = useSelector(state => state.data[dataProps]);
     const nextField = useSelector(state => state.nextField);
     const winPosition = useSelector(state => state.winPosition);
-    const isNextX = useSelector(state => state.isNextX)
-    const {addData, setPrevStep, setNextFieldAny, setDataTest, setCliked} = useAction();
+    const isNextX = useSelector(state => state.isNextX);      
+    const {addData, setPrevStep, setNextFieldAny, setDataTest, setCliked} = useAction();  
     const {whoWinnerInField} = useWhoWinner();
-    const darkMode = useSelector(state => state.darkMode)
+    const darkMode = useSelector(state => state.darkMode);
 
     useEffect(() => {
         whoWinnerInField(data, dataProps);
@@ -45,7 +31,7 @@ const Field = React.forwardRef(({onClick, dataProps, classProps }, ref) => {
             setDataTest([dataProps, i]);
             setNextFieldAny(replaceArray(winPosition, i));
             setPrevStep(10);
-            setCliked(true)
+            setCliked(true);
             return;
         } else {
             addData([dataProps, i]);
@@ -54,8 +40,24 @@ const Field = React.forwardRef(({onClick, dataProps, classProps }, ref) => {
         }
     }
 
+    const replaceArray = (array, i) => {
+        let result = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+        result = result.map((item, index) => {
+            if (!array[index] && i !== index) {
+                return item
+            }
+            return null
+        })
+        
+        if (result[0] === 0) {
+            return [0, ...result.filter(item => item)];
+        } else {
+            return result.filter(item => item);
+        }
+    }   
+
     const fix = (i) => { //перевірка чи при завершенні поля хід не впаде на те саме поле щоб в цьому випадку дати вільний хід
-        const newArray = [...state.data[i]];
+        const newArray = [...state.data[dataProps]]
 
         if (!newArray[i]) {
             newArray[i] = isNextX ? 1 : 2;
@@ -66,7 +68,7 @@ const Field = React.forwardRef(({onClick, dataProps, classProps }, ref) => {
 
     return (
         <>
-            <div className={`${classProps} ${darkMode ? 'dark': ''}`} ref={ref} onClick={onClick}>       
+            <div className={`${classProps} ${darkMode ? 'dark': ''}`} onClick={onClick}>       
                 <div className= "line vertical first"></div>
                 <div className= "line vertical second"></div>
                 <div className= "line horizontal third"></div>
@@ -93,6 +95,6 @@ const Field = React.forwardRef(({onClick, dataProps, classProps }, ref) => {
         </>
 
     ) 
-})
+}
 
 export default Field;

@@ -109,6 +109,16 @@
     &_dark {
         color: white;
     }
+    span {
+        color: black;
+        font-family: "Irish Grover", system-ui;
+        font-size: 30px;
+        font-weight: 400;
+        cursor: pointer;
+    }
+    span.no {
+        user-select: none;
+    }
 }
 
 @media (max-width: 576px) {
@@ -216,6 +226,13 @@
         left: 30px;
         &_dark {
             color: white;
+        }
+        span {
+            color: black;
+            font-family: "Irish Grover", system-ui;
+            font-size: 30px;
+            font-weight: 400;
+            user-select: none;
         }
     }
 }
