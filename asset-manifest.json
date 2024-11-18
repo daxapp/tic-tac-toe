@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/tic-tac-toe/static/css/main.1712c813.css",
-    "main.js": "/tic-tac-toe/static/js/main.75a6a91d.js",
+    "main.css": "/tic-tac-toe/static/css/main.aff25ec8.css",
+    "main.js": "/tic-tac-toe/static/js/main.dc73b42f.js",
     "static/media/rule3.png": "/tic-tac-toe/static/media/rule3.6cf36aeaf3c9a08391e2.png",
     "static/media/Frame 2 (4).png": "/tic-tac-toe/static/media/Frame 2 (4).0a9e215e670a547e4fb8.png",
     "static/media/rule2.png": "/tic-tac-toe/static/media/rule2.29d3e4479127036339a8.png",
     "static/media/rule1.png": "/tic-tac-toe/static/media/rule1.c4999b84dd79595b63c8.png",
     "index.html": "/tic-tac-toe/index.html",
-    "main.1712c813.css.map": "/tic-tac-toe/static/css/main.1712c813.css.map",
-    "main.75a6a91d.js.map": "/tic-tac-toe/static/js/main.75a6a91d.js.map"
+    "main.aff25ec8.css.map": "/tic-tac-toe/static/css/main.aff25ec8.css.map",
+    "main.dc73b42f.js.map": "/tic-tac-toe/static/js/main.dc73b42f.js.map"
   },
   "entrypoints": [
-    "static/css/main.1712c813.css",
-    "static/js/main.75a6a91d.js"
+    "static/css/main.aff25ec8.css",
+    "static/js/main.dc73b42f.js"
   ]
 }
