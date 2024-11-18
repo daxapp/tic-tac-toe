@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useRef,useEffect} from "react";
 import Square from "../square/square";
 import './field.scss';
 import {v4 as uuidv4} from 'uuid';
@@ -7,6 +7,7 @@ import useAction from "../../hooks/useAction";
 import useWhoWinner from "../../hooks/useWhoWinner";
 import Cross from '../cross/cross';
 import Circle from '../circle/circle';
+import sound from '../../assets/audio/minecraft-totem-sound.mp3'
 
 
 
@@ -65,9 +66,18 @@ const Field = ({onClick, dataProps, classProps }) => {
         
         return whoWinnerInField(newArray, i); 
     }
-
+    
+    const audioRef = useRef(null);
+    
+    const playSound = () => {
+        audioRef.current.play();
+    };
     return (
         <>
+            <audio ref={audioRef}>
+                <source src={sound} type="audio/mpeg" />
+                Your browser does not support the audio element.
+            </audio>
             <div className={`${classProps} ${darkMode ? 'dark': ''}`} onClick={onClick}>       
                 <div className= "line vertical first"></div>
                 <div className= "line vertical second"></div>
@@ -85,7 +95,7 @@ const Field = ({onClick, dataProps, classProps }) => {
                         }
 
                         return (
-                            <span key={uniqeuId}  onClick={() => {onChangeSign(i)}}>
+                            <span key={uniqeuId}  onClick={() => onChangeSign(i)} >
                                 <Square content={value} key={i} />
                             </span>
                         )

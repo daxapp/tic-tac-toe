@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, {useRef,useEffect} from "react";
 import useWhoWinner from "../../hooks/useWhoWinner";
 import Field from "../field/field";
 import './container.scss';
@@ -12,6 +12,7 @@ import Cross from "../cross/cross";
 import { useParams } from "react-router-dom";
 import Winner from "../winner/winner";
 import useCoder from "../../hooks/useCoder";
+import sound from '../../assets/audio/strange-notification-36458.mp3'
 
 
 
@@ -22,6 +23,7 @@ const Container = () => {
     const { setCliked, setWinner } = useAction();
     const { subscribeToDataFromDB, setDataInDB } = useHttp();
     const { numGame } = useParams();
+    const audioRef = useRef(null);  
 
     const { data, isNextX, darkMode, winner, winPosition, } = state;
 
@@ -33,6 +35,7 @@ const Container = () => {
     useEffect(() => {
         if (state.clicked) {
             setDataInDB(`Server/games/${decoder(numGame)}`, state)
+            playSound()
         }
         // eslint-disable-next-line
     }, [state, setDataInDB, numGame])
@@ -57,9 +60,18 @@ const Container = () => {
           console.error('Ошибка:', err);
         }
     };
+    
+    
+    const playSound = () => {
+        audioRef.current.play();
+    };
 
     return (
         <>  
+            <audio ref={audioRef}>
+                <source src={sound} type="audio/mpeg" />
+                Your browser does not support the audio element.
+            </audio>
             {!!winner ? <Winner winner={winner}></Winner> : null}
             <Nav/>
             <div className="center">
