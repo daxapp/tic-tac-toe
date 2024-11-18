@@ -22,6 +22,7 @@ const testSlice = createSlice({
         ],
         clicked: false,
         darkMode: false,
+        playersNum: 1
     },
     reducers: {
         addData: (state, action) => {
@@ -107,4 +108,4 @@ export const {
     setDarkMode,
     set
 } = actions;
-
+ 

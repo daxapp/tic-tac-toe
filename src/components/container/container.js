@@ -40,7 +40,7 @@ const Container = () => {
     const arrayRef = useRef([]);
     const { numGame } = useParams();
 
-    const { data, isNextX, prevStep, darkMode, winner, winPosition } = state;
+    const { data, isNextX, prevStep, darkMode, winner, winPosition, playersNum } = state;
 
     const createCode = (code) => {
         let result = '';

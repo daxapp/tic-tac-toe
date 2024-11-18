@@ -2,12 +2,11 @@ import React, {useEffect} from "react";
 import Square from "../square/square";
 import './field.scss';
 import {v4 as uuidv4} from 'uuid';
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import useAction from "../../hooks/useAction";
 import useWhoWinner from "../../hooks/useWhoWinner";
 import Cross from '../cross/cross';
 import Circle from '../circle/circle';
-import Winner from "../winner/winner";
 
 export const replaceArray = (array, i) => {
     let result = [0, 1, 2, 3, 4, 5, 6, 7, 8];
@@ -40,13 +39,13 @@ const Field = React.forwardRef(({onClick, dataProps, classProps }, ref) => {
     }, [data, dataProps, whoWinnerInField]);
 
     const onChangeSign = (i) => { 
-        if ((whoWinnerInField(state.data[i], i) && nextField.includes(dataProps)) || fix(i) || !!winPosition[i]) { 
+        if (data[i] || !nextField.includes(dataProps)) { 
+            return;
+        } else if ((whoWinnerInField(state.data[i], i) && nextField.includes(dataProps)) || fix(i) || !!winPosition[i]) {
             setDataTest([dataProps, i]);
             setNextFieldAny(replaceArray(winPosition, i));
             setPrevStep(10);
             setCliked(true)
-            return;
-        } else if (data[i] || !nextField.includes(dataProps)) {
             return;
         } else {
             addData([dataProps, i]);
