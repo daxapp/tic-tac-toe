@@ -35,12 +35,13 @@ const Container = () => {
     useEffect(() => {
         if (state.clicked) {
             setDataInDB(`Server/games/${decoder(numGame)}`, state)
-            playSound()
+            
         }
         // eslint-disable-next-line
     }, [state, setDataInDB, numGame])
 
     useEffect(() => {   
+        playSound()
         whoWinnerInContainer(winPosition);
         setCliked(false)
 
