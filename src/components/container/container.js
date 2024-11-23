@@ -18,14 +18,15 @@ import sound from '../../assets/audio/strange-notification-36458.mp3'
 
 const Container = () => {
     const state = useSelector(state => state);
-    const {decoder} = useCoder()
+    const { data, isNextX, darkMode, winner, winPosition, } = state;
+    
+    const { decoder } = useCoder()
     const { whoWinnerInContainer } = useWhoWinner();
     const { setCliked, setWinner } = useAction();
     const { subscribeToDataFromDB, setDataInDB } = useHttp();
     const { numGame } = useParams();
+    
     const audioRef = useRef(null);  
-
-    const { data, isNextX, darkMode, winner, winPosition, } = state;
 
     useEffect(() => {
         subscribeToDataFromDB(`Server/games/${decoder(numGame)}`)
@@ -56,15 +57,16 @@ const Container = () => {
     const copyTextToClipboard = async (text) => {
         try {
           await navigator.clipboard.writeText(text);
-          console.log('Текст успешно скопирован в буфер обмена!');
-        } catch (err) {
-          console.error('Ошибка:', err);
-        }
+        } catch (err) {}
     };
     
     
     const playSound = () => {
-        audioRef.current.play();
+        if (audioRef.current) {
+            audioRef.current.play().catch(error => {
+                console.error("Error playing audio:", error);
+            });
+        }
     };
 
     return (
@@ -77,8 +79,17 @@ const Container = () => {
             <Nav/>
             <div className="center">
                 <div className="item">
-                    <div className={darkMode ? 'who-next who-next-dark' : 'who-next'}>NEXT STEP</div>
-                    <div title='copy code' className={darkMode ? "code-room code-room_dark" : "code-room"} onClick={() => copyTextToClipboard(decoder(numGame))}><span className="no">CODE ROOM:</span> <span >{decoder(numGame)}</span></div>
+                    <div 
+                        className={darkMode ? 'who-next who-next-dark' : 'who-next'}>
+                        NEXT STEP
+                    </div>
+                    <div 
+                        title='copy code' 
+                        className={darkMode ? "code-room code-room_dark" : "code-room"} 
+                        onClick={() => copyTextToClipboard(decoder(numGame))}>
+                        <span className="no">CODE ROOM:</span> 
+                        <span > {decoder(numGame)}</span>
+                    </div>
                     <div className="who-next-icons">
                         <Cross notNeon={!isNextX}/>
                         <Circle notNeon={isNextX}/>

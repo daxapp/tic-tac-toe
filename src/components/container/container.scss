@@ -106,9 +106,7 @@
     position: absolute;
     bottom: 30px;
     left: 30px;
-    &_dark {
-        color: white;
-    }
+
     span {
         color: black;
         font-family: "Irish Grover", system-ui;
@@ -118,6 +116,11 @@
     }
     span.no {
         user-select: none;
+    }
+    &_dark {
+        span {
+            color: white;
+        }
     }
 }
 

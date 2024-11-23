@@ -39,7 +39,7 @@ const Field = ({onClick, dataProps, classProps }) => {
             setPrevStep(i); 
             setCliked(true)
         }
-    }
+    } 
 
     const replaceArray = (array, i) => {
         let result = [0, 1, 2, 3, 4, 5, 6, 7, 8];
