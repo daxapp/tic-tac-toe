@@ -7,6 +7,7 @@ import useHttp from '../../hooks/useHttp';
 import { v4 } from 'uuid';
 import useCoder from '../../hooks/useCoder';
 import ModalEnter from '../modalEnter/modalEnter';
+import { startGameData } from '../../utils/consts';
 
 const ViewMain = () => {
     const [ isModal, setIsModal ] = useState(false);
@@ -14,15 +15,7 @@ const ViewMain = () => {
     const code = createCode(v4())
     const pathCode = encoder(code);
     const { setDataInDB } = useHttp();
-    const startGameData = {
-        data: Array(9).fill(Array(9).fill(0)),
-        isNextX: true,
-        prevStep: 10,
-        nextField: [0,1,2,3,4,5,6,7,8],
-        winPosition: Array(9).fill(0),
-        winner: 0,
-        playersNum: 1
-    }
+
 
     const onModal = (arg) => {
         if (arg) {

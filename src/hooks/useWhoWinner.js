@@ -1,13 +1,12 @@
 import useAction from "./useAction";
 import { useSelector } from "react-redux";
+import { combinations } from "../utils/consts";
 
 const useWhoWinner = () => {
     const { setWinner, setWinnerOfField } = useAction();
-    const combinations = useSelector(state => state.combinations);
     const winPosition = useSelector(state => state.winPosition)
 
     const whoWinnerInContainer = (winPosition) => {
-        console.log(winPosition)
         combinations.forEach(combitation => {
             let [a, b, c] = combitation;
             if (winPosition[a] && winPosition[a] === winPosition[b] && winPosition[b] === winPosition[c]) {

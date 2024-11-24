@@ -22,7 +22,7 @@ const Container = () => {
     
     const { decoder } = useCoder()
     const { whoWinnerInContainer } = useWhoWinner();
-    const { setCliked, setWinner } = useAction();
+    const { setCliked } = useAction();
     const { subscribeToDataFromDB, setDataInDB } = useHttp();
     const { numGame } = useParams();
     
@@ -36,7 +36,6 @@ const Container = () => {
     useEffect(() => {
         if (state.clicked) {
             setDataInDB(`Server/games/${decoder(numGame)}`, state)
-            
         }
         // eslint-disable-next-line
     }, [state, setDataInDB, numGame])
@@ -45,14 +44,7 @@ const Container = () => {
         playSound()
         whoWinnerInContainer(winPosition);
         setCliked(false)
-
     }, [data, whoWinnerInContainer, state, setCliked, winPosition]);
-
-    useEffect(() => {
-        return () => {
-            setWinner(0);
-        }
-    }, [winner, setWinner]);
 
     const copyTextToClipboard = async (text) => {
         try {
