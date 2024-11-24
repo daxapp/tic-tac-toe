@@ -57,8 +57,8 @@ const Field = ({onClick, dataProps, classProps }) => {
         }
     }   
 
-    const fix = (i) => { //перевірка чи при завершенні поля хід не впаде на те саме поле щоб в цьому випадку дати вільний хід
-        const newArray = [...state.data[dataProps]]
+    const fix = (i) => { // перевірка чи при завершенні поля хід не впаде на те саме поле щоб в цьому випадку дати вільний хід
+        const newArray = [...state.data[i]]
 
         if (!newArray[i]) {
             newArray[i] = isNextX ? 1 : 2;
