@@ -23,7 +23,7 @@ const Nav = () => {
             <div className='nav__item'>
                 <div className="nav__img">
                     <img src={darkMode ? whiteExitImg : exitImg} alt='alt' />
-                    <Link to={'/tic-tac-toe'} className='link'></Link>                    
+                    <Link to={'/'} className='link'></Link>                    
                 </div>
                 <DarkMode/>
 
