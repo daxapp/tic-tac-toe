@@ -9,7 +9,7 @@ const DarkMode = () => {
     }
 
     return (
-        <div className="tumbler-wrapper" onClick={onNightMode}>
+        <div className="tumbler-wrapper" onClick={onNightMode}>  
             <div className="tumbler"></div>
             <svg
             version="1.1"

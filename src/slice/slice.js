@@ -7,6 +7,7 @@ const testSlice = createSlice({
         ...startGameData,
         clicked: false,
         darkMode: false,
+        isSound: false
     },
     reducers: {
         addData: (state, action) => {
@@ -66,7 +67,9 @@ const testSlice = createSlice({
         },
         setDarkMode: (state) => {
             state.darkMode = !state.darkMode;
-            console.log(state.darkMode)
+        },
+        setIsSound: (state) => {
+            state.isSound = !state.isSound
         },
         set: (state, action) => {
             state[action.payload[1]] = action.payload[0]
@@ -90,6 +93,7 @@ export const {
     setDataTest,
     setCliked,
     setDarkMode,
-    set
+    set,
+    setIsSound
 } = actions;
  

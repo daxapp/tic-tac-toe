@@ -31,8 +31,8 @@ const ViewMain = () => {
             <div className='main__title'>
                 E
                 <div className='main__title-inline'><Cross bigger/></div>
-                treme 
-                <br/> 
+                treme
+                <br/>
                 Tic Tac T
                 <div className='main__title-inline'><Circle bigger/></div>
                 e
@@ -46,7 +46,7 @@ const ViewMain = () => {
                 </button>
                 <button className='main__setings main__btn'>
                     <Link to="rules" className='main__setings main__link'>Rules</Link>
-                </button> 
+                </button>
             </div>
         </>        
     )

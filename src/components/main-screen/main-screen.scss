@@ -188,11 +188,13 @@ input[type="number"] {
 
 @media (max-width: 576px) { 
     .main {
+        background: url('../../assets/img/iPhone\ 14\ &\ 15\ Pro\ -\ 1.png') center center/cover no-repeat;
         &__title {
             margin-top: 100px;
             font-size: 40px;
             letter-spacing: 5px;
             line-height: 70px;
+            font-weight: 900;
         }
         &__btn {
             width: 200px;

@@ -1,0 +1,81 @@
+
+    body.night-mode .tumbler-s{
+        background-color: #000000;
+    }
+    body.sound-mode .tumbler-s {
+        transform: translateX(calc(100% + 0px));
+    }
+
+  .tumbler-wrapper {
+    margin-left: auto;
+    min-width: 80px;
+    height: 51px;
+    background-color: black;
+    border: #1d92b2;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 6px;
+    cursor: pointer;
+    display: flex;
+    position: relative; 
+    img {
+        height: 28px;
+        width: 28px;
+    }
+
+}
+
+  
+  .tumbler-s {
+    position: absolute;
+    min-height: 34px;
+    min-width: 34px;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: transform .5s, background-color .5s;
+    will-change: transform; 
+    }
+  
+  .sun-svg,
+  .moon-svg {
+    display: none; }
+
+@media(max-width: 576px) {
+  .tumbler-wrapper {
+    margin-left: auto;
+    min-width: 60px;
+    height: 41px;
+    background-color: black;
+    border: #1d92b2;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 6px;
+    cursor: pointer;
+    display: flex;
+    position: relative; 
+    img {
+        width: 22px;
+        height: 22px;
+    }
+}
+     
+  
+  .tumbler-s {
+    position: absolute;
+    min-height: 25px;
+    min-width: 25px;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: transform .5s, background-color .5s;
+    will-change: transform; 
+    }
+  
+  .sun-svg,
+  .moon-svg {
+    display: none; }
+
+}

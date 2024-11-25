@@ -5,9 +5,10 @@ import whiteExitImg from '../../assets/icons/whiteExit.png'
 import DarkMode from '../darkMode/darkMode';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import SoundSwitch from '../soundSwitch/SoundSwitch';
 
 const Nav = () => {
-    const darkMode = useSelector(state => state.darkMode);
+    const { darkMode, isSound} = useSelector(state => state);
 
     useEffect(() => {
         if (darkMode) {
@@ -18,6 +19,15 @@ const Nav = () => {
         };
     }, [darkMode]);
 
+    useEffect(() => {
+        if (isSound) {
+            document.body.classList.add('sound-mode');
+        }
+        return () => {
+          document.body.classList.remove('sound-mode');
+        };
+    }, [isSound]);
+
     return (
         <nav className="nav">
             <div className='nav__item'>
@@ -26,6 +36,7 @@ const Nav = () => {
                     <Link to={'/'} className='link'></Link>                    
                 </div>
                 <DarkMode/>
+                <SoundSwitch />
 
             </div>
         </nav>

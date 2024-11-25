@@ -15,10 +15,9 @@ import useCoder from "../../hooks/useCoder";
 import sound from '../../assets/audio/strange-notification-36458.mp3'
 
 
-
 const Container = () => {
     const state = useSelector(state => state);
-    const { data, isNextX, darkMode, winner, winPosition, } = state;
+    const { data, isNextX, darkMode, winner, winPosition, isSound} = state;
     
     const { decoder } = useCoder()
     const { whoWinnerInContainer } = useWhoWinner();
@@ -41,7 +40,9 @@ const Container = () => {
     }, [state, setDataInDB, numGame])
 
     useEffect(() => {   
-        playSound()
+        if(!isSound) {
+            playSound()  
+        }
         whoWinnerInContainer(winPosition);
         setCliked(false)
     }, [data, whoWinnerInContainer, state, setCliked, winPosition]);

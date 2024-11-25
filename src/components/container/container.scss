@@ -124,10 +124,12 @@
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 1000px) {
     .center {
         padding-top: 20px;
         height: 90vh;
+        display: flex;
+        justify-content: center;
     }
     
     .container {
@@ -135,7 +137,8 @@
         grid-template-rows: repeat(3, 110px);
         gap: 10px;
         top: 20%;
-        left: 5%;
+        left: 50%;
+        transform: translateX(calc(-50%));
     }
     
     .who-next {
@@ -227,15 +230,17 @@
         position: absolute;
         bottom: 0px;
         left: 30px;
-        &_dark {
-            color: white;
-        }
         span {
             color: black;
             font-family: "Irish Grover", system-ui;
             font-size: 30px;
             font-weight: 400;
             user-select: none;
+        }
+        &_dark {
+            span {
+                color: white;
+            }   
         }
     }
 }

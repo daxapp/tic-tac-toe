@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
-import { addData, setWinnerOfField, setWinner, setPrevStep, setNextFieldAny, clearContainer, setTimeStep, setDataFromDB, setDataTest, setCliked, setDarkMode, set  } from '../slice/slice';
+import { addData, setWinnerOfField, setWinner, setPrevStep, setNextFieldAny, clearContainer, setTimeStep, setDataFromDB, setDataTest, setCliked, setDarkMode, set, setIsSound  } from '../slice/slice';
 
 const useAction = () => {
     const dispatch = useDispatch();
@@ -16,7 +16,8 @@ const useAction = () => {
                                 setDataTest,
                                 setCliked,
                                 setDarkMode,
-                                set
+                                set,
+                                setIsSound
                                 }, dispatch);
 }
 
