@@ -1,4 +1,4 @@
-# Ultimate Tic-Tac-Toe
+# Ultimate Tic-Tac-Toe - https://daxapp.github.io/tic-tac-toe/
 
 This project is an implementation of **Ultimate Tic-Tac-Toe**, a more strategic and complex variation of classic Tic-Tac-Toe, inspired by the book *Math with Bad Drawings*. It enhances the traditional game by adding a layered board system that requires careful planning and foresight.
 
